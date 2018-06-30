@@ -1,0 +1,249 @@
+git flow realease start 0.1.0
+
+Para iniciar, utiliza o release start
+O 0.1.0 é a tag que o sistema deverá se basear
+
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (master)
+$ git init
+Initialized empty Git repository in C:/Users/UP/Desktop/LAB/.git/
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (master)
+$ git config user.email
+marlon.castilho.almeida@gmail.com
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (master)
+$ git flow init
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/]
+Bugfix branches? [bugfix/]
+Release branches? [release/]
+Hotfix branches? [hotfix/]
+Support branches? [support/]
+Version tag prefix? []
+Hooks and filters directory? [C:/Users/UP/Desktop/LAB/.git/hooks]
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git flow feature start recurso-milionario
+Switched to a new branch 'feature/recurso-milionario'
+
+Summary of actions:
+- A new branch 'feature/recurso-milionario' was created, based on 'develop'
+- You are now on branch 'feature/recurso-milionario'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish recurso-milionario
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (feature/recurso-milionario)
+$ git add recurso.txt
+fatal: pathspec 'recurso.txt' did not match any files
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (feature/recurso-milionario)
+$ git add recurso.txt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (feature/recurso-milionario)
+$ git commit -m "Finished feature"
+[feature/recurso-milionario 43cfb73] Finished feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 recurso.txt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (feature/recurso-milionario)
+$ git flow feature finish recurso-milionario
+Switched to branch 'develop'
+Updating 0154994..43cfb73
+Fast-forward
+ recurso.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 recurso.txt
+Deleted branch feature/recurso-milionario (was 43cfb73).
+
+Summary of actions:
+- The feature branch 'feature/recurso-milionario' was merged into 'develop'
+- Feature branch 'feature/recurso-milionario' has been locally deleted
+- You are now on branch 'develop'
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git flow release start 0.1.0
+Switched to a new branch 'release/0.1.0'
+
+Summary of actions:
+- A new branch 'release/0.1.0' was created, based on 'develop'
+- You are now on branch 'release/0.1.0'
+
+Follow-up actions:
+- Bump the version number now!
+- Start committing last-minute fixes in preparing your release
+- When done, run:
+
+     git flow release finish '0.1.0'
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (release/0.1.0)
+$ git status
+On branch release/0.1.0
+nothing to commit, working tree clean
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (release/0.1.0)
+$ vim recurso.txxt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (release/0.1.0)
+$ VIM RECURSO
+
+[Alterações não gravadas]
+J/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+K/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+[Alterações não gravadas]
+/usr/bin/bash: man: command not found
+
+o shell devolveu 127
+
+Aperte ENTER ou digite um comando para continuar
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (release/0.1.0)
+$ vim recurso.txt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (release/0.1.0)
+Merge made by the 'recursive' strategy.
+ recurso.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 recurso.txt
+Already on 'master'
+Switched to branch 'develop'
+Merge made by the 'recursive' strategy.
+ recurso.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Deleted branch release/0.1.0 (was b712781).
+
+Summary of actions:
+- Release branch 'release/0.1.0' has been merged into 'master'
+- The release was tagged '0.1.0'
+- Release tag '0.1.0' has been back-merged into 'develop'
+- Release branch 'release/0.1.0' has been locally deleted
+- You are now on branch 'develop'
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git tag
+0.1.0
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git flow version
+1.11.0 (AVH Edition)
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git flow hotfix start 0.1.1
+Switched to a new branch 'hotfix/0.1.1'
+
+Summary of actions:
+- A new branch 'hotfix/0.1.1' was created, based on 'master'
+- You are now on branch 'hotfix/0.1.1'
+
+Follow-up actions:
+- Start committing your hot fixes
+- Bump the version number now!
+- When done, run:
+
+     git flow hotfix finish '0.1.1'
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (hotfix/0.1.1)
+$ vim recurso.txt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (hotfix/0.1.1)
+$ git commit -m "little hotfix in a feature"
+On branch hotfix/0.1.1
+Changes not staged for commit:
+        modified:   recurso.txt
+
+Untracked files:
+        RECURSO
+
+no changes added to commit
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (hotfix/0.1.1)
+$ git add recurso.txt
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (hotfix/0.1.1)
+$ git commit -m "little hotfix in a feature"
+[hotfix/0.1.1 d44353c] little hotfix in a feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (hotfix/0.1.1)
+$ git flow hotfix finish 0.1.1
+Switched to branch 'master'
+Merge made by the 'recursive' strategy.
+ recurso.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Switched to branch 'develop'
+Merge made by the 'recursive' strategy.
+ recurso.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Deleted branch hotfix/0.1.1 (was d44353c).
+
+Summary of actions:
+- Hotfix branch 'hotfix/0.1.1' has been merged into 'master'
+- The hotfix was tagged '0.1.1'
+- Hotfix tag '0.1.1' has been back-merged into 'develop'
+- Hotfix branch 'hotfix/0.1.1' has been locally deleted
+- You are now on branch 'develop'
+
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ git tag
+0.1.0
+0.1.1
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$ ^C
+
+UP@NSAE93478 MINGW64 ~/Desktop/LAB (develop)
+$
